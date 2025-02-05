@@ -7,57 +7,85 @@
     <style>
         :root {
             --primary-color: #2c3e50;
-            --accent-color: #3498db;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
+            --accent-color: #3a6ea5; /* More sophisticated blue */
+            --text-color: #444;
+            --light-bg: #f8f9fa;
+            --border-radius: 8px;
         }
 
         body {
             font-family: 'Roboto', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: var(--text-color);
             margin: 0;
             padding: 0;
+            background-color: white;
         }
 
         header {
             background-color: var(--primary-color);
             color: white;
-            padding: 2rem 1rem;
+            padding: 4rem 1rem 3rem;
             text-align: center;
+            margin-bottom: 2rem;
         }
 
         nav {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-            background-color: var(--light-bg);
+            gap: 2.5rem;
+            padding: 1.2rem;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
         }
 
         section {
-            padding: 3rem 1rem;
-            max-width: 1200px;
+            padding: 4rem 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .hero {
-            text-align: center;
-            padding: 4rem 1rem;
-            background-color: var(--light-bg);
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
         }
 
         .research-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .publication-list {
@@ -67,42 +95,88 @@
 
         .publication-item {
             margin-bottom: 1.5rem;
-            padding: 1rem;
-            background-color: var(--light-bg);
-            border-radius: 4px;
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-3px);
         }
 
         .button {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.8rem;
             background-color: var(--accent-color);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            gap: 0.5rem;
         }
 
         .button:hover {
-            background-color: #2980b9;
+            background-color: #2c5282;
+            transform: translateY(-2px);
         }
 
         footer {
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 3rem;
+            padding: 2.5rem 1rem;
+            margin-top: 5rem;
+        }
+
+        /* Improved text readability */
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
         }
 
         @media (max-width: 768px) {
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
             nav {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            section {
+                padding: 3rem 1rem;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -114,37 +188,41 @@
         <a href="#about">About</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
-        <a href="#blog">Blog</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
         <h2>About Me</h2>
         <div class="research-grid">
+            <img src="avt.jpg" alt="Dung V. Nguyen" class="profile-img">
             <div>
-                <img src="avt.jpg" alt="Dr. Jane Smith" style="width: 200px; border-radius: 50%;">
-            </div>
-            <div>
-                <p>I'm currently a master student who is intrigued by AI and its abilities to change the world. 
-                    I take a huge interest in mathematics and the ways it can be applied in various aspects of science such as optimization and deep learning.
-                    My long-term goal is to pursue an academic career, contributing to both the theoretical foundations of mathematics and its practical applications in fields such as AI and optimization. 
-                    I am eager to engage with faculty and fellow researchers who share my passion for advancing mathematical knowledge and exploring innovative solutions to complex problems. 
-                    My research focuses on unveiling the mathematical intuition behind the success of AI models and using math as a toolkit to drive advancements, 
-                    such as optimizing complex AI models or enhancing computational efficiency.<br>
-                    Alongside my research goals, I would like to share some thoughts on conducting research. Throughout my academic research experience, I have identified recurring patterns in methodology that appear in many papers.
-                    This observation has led me to categorize AI research skills into three distinct levels. At level 1, researchers often naively combine different modules from various architectures, 
-                    hoping this will enhance model performance. I refer to this as "playing with LEGO pieces", where one assembles different modules and, through trial and error, seeks promising solutions.
-                    At level 2, researchers elevate their approach by abstracting their work, merging methodologies to mitigate each other's weaknesses. This stage requires a deep understanding of various solutions and enables researchers to introduce novelty by 
-                    uncovering hidden connections among existing methods. Finally, at level 3, researchers develop a closely related line of work that transforms a problem into a mathematical model. 
-                    Leveraging the strengths of machine learning, they create scalable solutions that ensure interpretability and leave room for further development, as long as the mathematical models remain generalizable and robust.
-                </p>
-                <h3>Research Interests</h3>
-                <ul>
-                    <li>Mixture of Experts</li>
-                    <li>Optimization</li>
-                    <li>Computer Vision</li>
-                    <li>Reinforcement Learning</li>
-                </ul>
+              <div class="section">
+                    I am a master's student passionate about AI and its transformative potential. My interests lie in mathematics and its applications, particularly in optimization and deep learning. I aspire to an academic career, contributing to both the theoretical and practical aspects of mathematics in AI.
+                </div>
+                <div class="section">
+                    My research focuses on uncovering the mathematical intuition behind AI models and leveraging mathematical tools to optimize models and enhance computational efficiency. I seek to collaborate with faculty and researchers who share my enthusiasm for advancing mathematical knowledge and developing innovative solutions to complex problems.
+                </div>
+                
+                <div class="highlight-box">
+                    <h3>Research Approach</h3>
+                        <div class="level">
+                                <strong>Level 1 ("LEGO Assembly"):</strong> Researchers naively combine modules from different architectures, relying on trial and error to improve performance.
+                            </div>
+                            <div class="level">
+                                <strong>Level 2 (Methodological Abstraction):</strong> Researchers integrate techniques to offset weaknesses, uncovering hidden connections and introducing novelty.
+                            </div>
+                            <div class="level">
+                                <strong>Level 3 (Mathematical Modeling):</strong> Researchers transform problems into mathematical frameworks, ensuring scalability, interpretability, and robustness for future advancements.
+                            </div>
+                </div>
+
+                <h3 style="margin-top: 2rem;">Research Interests</h3>
+                <div class="interest-tags">
+                    <span class="tag">Mixture of Experts</span>
+                    <span class="tag">Optimization</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Reinforcement Learning</span>
+                </div>
             </div>
         </div>
     </section>
@@ -154,31 +232,41 @@
         <ul class="publication-list">
             <li class="publication-item">
                 <h3>CAMEx: Curvature-aware Merging of Experts</h3>
-                <p>Viet Dung Nguyen, Minh Nguyen Hoang, Luc Nguyen, Rachel Teo, Tan Minh Nguyen, Linh Duy Tran (2025) - ICLR</p>
-                <a href="https://openreview.net/forum?id=nT2u0M0nf8" class="button">openreview</a>
+                <p class="authors">Viet Dung Nguyen, Minh Nguyen Hoang, Luc Nguyen, Rachel Teo, Tan Minh Nguyen, Linh Duy Tran (2025)</p>
+                <div class="publication-links">
+                    <a href="https://openreview.net/forum?id=nT2u0M0nf8" class="button">
+                        <i class="fas fa-external-link-alt"></i> OpenReview
+                    </a>
+                </div>
             </li>
-            <!-- Add more publications -->
         </ul>
     </section>
 
     <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: jane.smith@institute.edu<br>
-    Twitter: @AIResearcher<br>
-    GitHub: github.com/jaresearcher</p>
-    <a href="CV_VietDung.pdf" 
-       class="button" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       CV
-    </a>
+        <h2>Contact</h2>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Get in Touch</h3>
+                <p>
+                    <i class="fas fa-envelope"></i> dung.nguyen@example.com<br>
+                    <i class="fab fa-twitter"></i> @AI_Researcher<br>
+                    <i class="fab fa-github"></i> github.com/dung-researcher
+                </p>
+            </div>
+            <div class="contact-card">
+                <h3>Documents</h3>
+                <a href="CV_VietDung.pdf" class="button" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-file-pdf"></i> View CV
+                </a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>© 2023 Dung V. Nguyen. All rights reserved.</p>
-        <div>
-            <a href="#"><img src="scholar-icon.png" alt="Google Scholar" style="width: 24px;"></a>
-            <!-- Add other social icons -->
+        <p>© 2025 Dung V. Nguyen. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://scholar.google.com/citations?user=wKkzrtEAAAAJ&hl=en" class="social-icon"><i class="fab fa-google-scholar"></i></a>
+            <a href="https://www.linkedin.com/in/nvdmelon/" class="social-icon"><i class="fab fa-linkedin"></i></a>
         </div>
     </footer>
 </body>
