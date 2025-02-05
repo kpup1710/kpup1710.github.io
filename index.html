@@ -3,94 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Page</title>
+    <title>Dr. Jane Smith - AI Researcher</title>
     <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
             margin: 0;
             padding: 0;
-            text-align: center;
-            background-color: #f4f4f4;
         }
+
         header {
-            background: #333;
+            background-color: var(--primary-color);
             color: white;
-            padding: 20px;
+            padding: 2rem 1rem;
+            text-align: center;
         }
-        nav ul {
-            list-style: none;
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        section {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: var(--light-bg);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .publication-list {
+            list-style-type: none;
             padding: 0;
         }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
+
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--light-bg);
+            border-radius: 4px;
         }
-        nav a {
+
+        .button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent-color);
             color: white;
             text-decoration: none;
-            font-size: 18px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+        .button:hover {
+            background-color: #2980b9;
         }
-        .contact {
-            margin-top: 30px;
-            padding: 20px;
-            background: #ddd;
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
         }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Homepage</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <h1>Dr. Jane Smith</h1>
+        <p>AI Researcher | Machine Learning Specialist</p>
     </header>
 
-    <div class="container">
-        <h2 id="about">About Me</h2>
-        <img src="profile.jpg" alt="My Profile Picture" class="profile-img">
-        <p>Hello! I'm an AI researcher passionate about machine learning, deep learning, and artificial intelligence applications.</p>
-    </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
 
-    <div class="container" id="portfolio">
-        <h2>Portfolio</h2>
-        <p>Here are some of my projects:</p>
-        <ul>
-            <li><strong>AI Chatbot:</strong> A conversational AI system trained to assist users.</li>
-            <li><strong>Neural Network Visualizer:</strong> A tool to understand neural network architectures.</li>
-            <li><strong>AI Research Papers:</strong> Various publications and insights on AI advancements.</li>
-        </ul>
-        <h3>Research Papers</h3>
-        <ul>
-            <li><a href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank">Deep Learning for Natural Language Processing</a></li>
-            <li><a href="https://arxiv.org/abs/YYYY.YYYYY" target="_blank">Reinforcement Learning in Robotics</a></li>
-            <li><a href="https://arxiv.org/abs/ZZZZ.ZZZZZ" target="_blank">Explainability in AI: A Survey</a></li>
-        </ul>
-    </div>
+    <section class="hero">
+        <h2>Advancing Responsible AI Development</h2>
+        <p>Exploring the frontiers of machine learning and ethical AI implementation</p>
+        <a href="#research" class="button">View Recent Work</a>
+    </section>
 
-    <div class="contact" id="contact">
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="research-grid">
+            <div>
+                <img src="profile-placeholder.jpg" alt="Dr. Jane Smith" style="width: 200px; border-radius: 50%;">
+            </div>
+            <div>
+                <p>I'm a senior AI researcher at XYZ Institute, specializing in computer vision and natural language processing. My work focuses on developing ethical AI systems that enhance human decision-making while maintaining transparency and accountability.</p>
+                <h3>Research Interests</h3>
+                <ul>
+                    <li>Explainable AI (XAI)</li>
+                    <li>Multimodal Learning</li>
+                    <li>AI Safety</li>
+                    <li>Reinforcement Learning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>Selected Publications</h2>
+        <ul class="publication-list">
+            <li class="publication-item">
+                <h3>Interpretable Neural Models for Medical Diagnosis</h3>
+                <p>Smith, J., et al. (2023) - NeurIPS</p>
+                <a href="#" class="button">PDF</a>
+                <a href="#" class="button">arXiv</a>
+            </li>
+            <!-- Add more publications -->
+        </ul>
+    </section>
+
+    <section id="contact">
         <h2>Contact</h2>
-        <p>Email: your-email@example.com</p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/your-profile" target="_blank">Your Profile</a></p>
-        <p>GitHub: <a href="https://github.com/your-username" target="_blank">your-username</a></p>
-    </div>
+        <p>Email: jane.smith@institute.edu<br>
+        Twitter: @AIResearcher<br>
+        GitHub: github.com/jaresearcher</p>
+        <a href="cv.pdf" class="button" download>Download CV</a>
+    </section>
+
+    <footer>
+        <p>© 2023 Dr. Jane Smith. All rights reserved.</p>
+        <div>
+            <a href="#"><img src="scholar-icon.png" alt="Google Scholar" style="width: 24px;"></a>
+            <!-- Add other social icons -->
+        </div>
+    </footer>
 </body>
 </html>
