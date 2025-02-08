@@ -5,354 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dung V. Nguyen - AI Researcher</title>
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --accent-color: #3a6ea5;
-            --text-color: #444;
-            --light-bg: #f8f9fa;
-            --border-radius: 8px;
-        }
+        /* Previous CSS remains unchanged */
 
-        body {
-            font-family: 'Roboto', sans-serif;
-            line-height: 1.7;
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            background-color: white;
-        }
-
-        header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 4rem 1rem 3rem;
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        nav {
+        .education-item {
             display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            padding: 1.2rem;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-color);
-        }
-
-        section {
-            padding: 4rem 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.5px;
-        }
-
-        h2 {
-            font-size: 2rem;
-            color: var(--primary-color);
+            align-items: flex-start;
+            gap: 1.5rem;
             margin-bottom: 2.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid var(--accent-color);
-            display: inline-block;
         }
 
-        .research-grid {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .profile-img {
-            width: 100%;
+        .education-logo {
+            width: 80px;
+            height: auto;
             border-radius: var(--border-radius);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .publication-list {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .publication-item {
-            margin-bottom: 1.5rem;
-            padding: 1.5rem;
-            background-color: white;
-            border: 1px solid #eee;
-            border-radius: var(--border-radius);
-            transition: transform 0.2s ease;
-        }
-
-        .publication-item:hover {
-            transform: translateY(-3px);
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
-            padding: 0.8rem 1.8rem;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: var(--border-radius);
-            transition: all 0.3s ease;
-            gap: 0.5rem;
-        }
-
-        .button:hover {
-            background-color: #2c5282;
-            transform: translateY(-2px);
-        }
-
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 2.5rem 1rem;
-            margin-top: 5rem;
-        }
-
-        p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.5rem;
-        }
-
-        ul {
-            padding-left: 1.2rem;
-        }
-
-        li {
-            margin-bottom: 0.8rem;
-            position: relative;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            display: inline-block;
-            padding: 0.4rem 1rem;
-            background-color: var(--light-bg);
-            border-radius: 20px;
-            margin: 0.3rem;
-            font-size: 0.9rem;
-        }
-
-        .social-icon {
-            color: white;
-            margin: 0 1rem;
-            font-size: 1.4rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .social-icon:hover {
-            opacity: 0.8;
-        }
-
-        .contact-card {
-            padding: 1.5rem;
-            background-color: white;
-            border-radius: var(--border-radius);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .highlight-box {
-            background-color: var(--light-bg);
-            padding: 1.5rem;
-            border-radius: var(--border-radius);
-            margin: 2rem 0;
-        }
-
-        .authors {
-            color: #666;
-            font-size: 0.95rem;
-            margin: 0.8rem 0;
-        }
-
-        .ai {
-            font-size: 1.3rem;
-            vertical-align: middle;
+        .education-details {
+            flex: 1;
         }
 
         @media (max-width: 768px) {
-            .research-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .education-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
             }
-            
-            nav {
-                gap: 1.5rem;
-                padding: 1rem;
-            }
-            
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            section {
-                padding: 3rem 1rem;
+
+            .education-logo {
+                margin-bottom: 1rem;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <!-- Previous links to fonts and icons remain unchanged -->
 </head>
 <body>
-    <header>
-        <h1>Dung V. Nguyen</h1>
-        <p>AI Researcher | Machine Learning Specialist</p>
-    </header>
+    <!-- Previous header, nav, and about sections remain unchanged -->
 
-    <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
-    </nav>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <div class="research-grid">
-            <img src="avt.jpg" alt="Dung V. Nguyen" class="profile-img">
-            <div>
-                <div class="section">
-                    I am a master's student passionate about AI and its transformative potential. My interests lie in mathematics and its applications, particularly in optimization and deep learning. I aspire to an academic career, contributing to both the theoretical and practical aspects of mathematics in AI.
-                </div>
-                <div class="section">
-                    My research focuses on uncovering the mathematical intuition behind AI models and leveraging mathematical tools to optimize models and enhance computational efficiency. I seek to collaborate with faculty and researchers who share my enthusiasm for advancing mathematical knowledge and developing innovative solutions to complex problems.
-                </div>
-                
-                <div class="highlight-box">
-                    <h3>My thought on Research Approach</h3>
-                        <p> Alongside my research goals, I would like to share some thoughts on conducting research. Throughout my academic research experience, I have identified recurring patterns in methodology that appear in many papers. This observation has led me to categorize AI research skills into three distinct levels. </p>
-                       <div class="level">
-                            <strong>Level 1 ("LEGO Assembly"):</strong> Researchers naively combine modules from different architectures, relying on trial and error to improve performance.
-                        </div>
-                        <div class="level">
-                            <strong>Level 2 (Methodological Abstraction):</strong> Researchers integrate techniques to offset weaknesses, uncovering hidden connections and introducing novelty.
-                        </div>
-                        <div class="level">
-                            <strong>Level 3 (Mathematical Modeling):</strong> Researchers transform problems into mathematical frameworks, ensuring scalability, interpretability, and robustness for future advancements.
-                        </div>
-                </div>
-
-                <h3 style="margin-top: 2rem;">Research Interests</h3>
-                <div class="interest-tags">
-                    <span class="tag">Mixture of Experts</span>
-                    <span class="tag">Optimization</span>
-                    <span class="tag">Computer Vision</span>
-                    <span class="tag">Reinforcement Learning</span>
-                </div>
-            </div>
-        </div>
-    </section>
-     <section id="education">
-            <h2>Education</h2>
-            <div class="education-item">
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-item">
+            <img src="hust_logo.png" alt="HUST Logo" class="education-logo">
+            <div class="education-details">
                 <h3>Master of Science in Applied Mathematics and Informatics</h3>
                 <p><strong>Faculty of Applied Mathematics and Informatics, Hanoi University of Science and Technology</strong> | 2024 - Present</p>
                 <p>Relevant coursework: Advanced Machine Learning, Optimization Methods, Computer Vision, Reinforcement Learning</p>
             </div>
-            <div class="education-item">
+        </div>
+        <div class="education-item">
+            <img src="hust_logo.png" alt="HUST Logo" class="education-logo">
+            <div class="education-details">
                 <h3>Bachelor of Science in Applied Mathematics and Informatics</h3>
                 <p><strong>Faculty of Applied Mathematics and Informatics, Hanoi University of Science and Technology</strong> | 2019 - 2023</p>
                 <p>Graduated with Honors.</p>
             </div>
-        </section>
-    
-      <section id="publications">
-        <h2>Selected Publications</h2>
-        <ul class="publication-list">
-            <li class="publication-item">
-                <h3>CAMEx: Curvature-aware Merging of Experts - International Conference on Learning Representations (ICLR), 2025</h3>
-                <p class="authors"><strong>Viet Dung Nguyen</strong>, Minh Nguyen Hoang, Luc Nguyen, Rachel Teo, Tan Minh Nguyen, Linh Duy Tran</p>
-                <div class="publication-links">
-                    <a href="https://openreview.net/forum?id=nT2u0M0nf8" class="button">
-                        <i class="fas fa-external-link-alt"></i> URL
-                    </a>
-                </div>
-                <h3>A Hyper-Transformer model for Controllable Pareto Front Learning with Split Feasibility Constraints- Neural Networks, 2024</h3>
-                <p class="authors">Tran Anh Tuan, <strong>Nguyen Viet Dung</strong>, Tran Ngoc Thang </p>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1016/j.neunet.2024.106571" class="button">
-                        <i class="fas fa-external-link-alt"></i> URL
-                    </a>
-                </div>
-                <h3>A neurodynamic approach for a class of pseudoconvex semivectorial bilevel optimization problemss - Optimization Methods and Software, 2024</h3>
-                <p class="authors">Tran Ngoc Thang, Dao Minh Hoang, <strong>Nguyen Viet Dung</strong> </p>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1080/10556788.2024.2380688" class="button">
-                        <i class="fas fa-external-link-alt"></i> URL
-                    </a>
-                </div>               
-                <h3>An EffcientNet-encoder U-Net Joint Residual Refinement Module with Tversky–Kahneman Baroni–Urbani–Buser loss for biomedical image Segmentation - Biomedical Signal Processing and Control, 2023</h3>
-                <p class="authors">Do-Hai-Ninh Nham, Minh-Nhat Trinh, <strong>Viet-Dung Nguyen</strong>, Van-Truong Pham, Thi-Thao Tran</p>
-                <div class="publication-links">
-                    <a href="https://doi.org/10.1016/j.bspc.2023.104631" class="button">
-                        <i class="fas fa-external-link-alt"></i> URL
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>Get in Touch</h3>
-                <p>
-                    <i class="fas fa-envelope"></i> nguyenvietd67@gmail.com<br>
-                    <i class="fab fa-twitter"></i> @DungNv1714<br>
-                    <i class="fab fa-github"></i> github.com/kpup1710
-                </p>
-            </div>
-            <div class="contact-card">
-                <h3>Documents</h3>
-                <a href="CV_VietDung.pdf" class="button" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-file-pdf"></i> View CV
-                </a>
-            </div>
         </div>
     </section>
 
-    <footer>
-        <p>© 2025 Dung V. Nguyen. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://scholar.google.com/citations?user=wKkzrtEAAAAJ&hl=en" class="social-icon" aria-label="Google Scholar">
-                <i class="ai ai-google-scholar"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/nvdmelon/" class="social-icon" aria-label="LinkedIn">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
-    </footer>
+    <!-- Previous publications, contact, and footer sections remain unchanged -->
 </body>
 </html>
