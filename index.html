@@ -261,41 +261,6 @@
                 gap: 2rem;
             }
         }
-
-        /* Hide the hamburger menu by default on larger screens */
-        #hamburger-menu {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Adjust the nav for mobile view */
-        @media (max-width: 768px) {
-            #hamburger-menu {
-                display: block;
-            }
-
-            #nav-links {
-                display: none;
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-                background-color: white;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-                position: absolute;
-                top: 60px; /* Adjust based on your header height */
-                left: 0;
-                right: 0;
-                z-index: 1000;
-            }
-
-            #nav-links.active {
-                display: flex;
-            }
-        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -308,16 +273,11 @@
     </header>
 
     <nav>
-        <button id="hamburger-menu" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div id="nav-links">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-        </div>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
     </nav>
 
     <section id="about">
