@@ -41,8 +41,8 @@
 
         nav {
             display: flex;
-            justify-content: center;
-            gap: 1.5rem;
+            justify-content: space-between;
+            align-items: center;
             padding: 1rem;
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -61,6 +61,17 @@
 
         nav a:hover {
             color: var(--accent-color);
+        }
+
+        .menu {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
         }
 
         main {
@@ -272,6 +283,27 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
         @media print {
             nav { 
                 display: none; 
@@ -300,11 +332,16 @@
     </header>
 
     <nav>
-        <a href="#about">About</a>
-        <a href="#education">Education</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact">Contact</a>
+        <div class="menu-icon" id="menuIcon">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu" id="menu">
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
     <main>
@@ -448,7 +485,7 @@
         </section>
     </main>
 
-    <footer>
+<footer>
         <div class="social-links">
             <a href="https://scholar.google.com/citations?user=wKkzrtEAAAAJ&hl=en" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
                 <i class="ai ai-google-scholar"></i>
@@ -459,5 +496,12 @@
         </div>
         <p>© 2025 Dung V. Nguyen. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('menuIcon').addEventListener('click', function() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
