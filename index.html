@@ -41,7 +41,7 @@
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Center the menu */
             align-items: center;
             padding: 1rem;
             background-color: white;
@@ -66,12 +66,15 @@
         .menu {
             display: flex;
             gap: 1.5rem;
+            justify-content: center; /* Center the menu items */
         }
 
         .menu-icon {
-            display: none;
+            display: none; /* Hide by default */
             font-size: 1.5rem;
             cursor: pointer;
+            position: absolute; /* Position the hamburger icon absolutely */
+            left: 1rem; /* Align to the left */
         }
 
         main {
@@ -285,7 +288,7 @@
 
         @media (max-width: 768px) {
             .menu {
-                display: none;
+                display: none; /* Hide the full menu on mobile */
                 flex-direction: column;
                 width: 100%;
                 background-color: white;
@@ -296,11 +299,11 @@
             }
 
             .menu.active {
-                display: flex;
+                display: flex; /* Show the menu when active */
             }
 
             .menu-icon {
-                display: block;
+                display: block; /* Show the hamburger icon on mobile */
             }
         }
 
@@ -343,6 +346,7 @@
             <a href="#contact">Contact</a>
         </div>
     </nav>
+
 
     <main>
         <section id="about">
@@ -485,7 +489,7 @@
         </section>
     </main>
 
-<footer>
+    <footer>
         <div class="social-links">
             <a href="https://scholar.google.com/citations?user=wKkzrtEAAAAJ&hl=en" class="social-icon" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar Profile">
                 <i class="ai ai-google-scholar"></i>
