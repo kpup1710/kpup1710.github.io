@@ -30,10 +30,10 @@
             margin-bottom: 2rem;
         }
 
-        .navbar {
+        nav {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            justify-content: center;
+            gap: 2.5rem;
             padding: 1.2rem;
             background-color: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -42,12 +42,7 @@
             z-index: 1000;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
+        nav a {
             color: var(--text-color);
             text-decoration: none;
             font-weight: 500;
@@ -55,37 +50,201 @@
             transition: color 0.3s ease;
         }
 
-        .nav-links a:hover {
+        nav a:hover {
             color: var(--accent-color);
         }
 
-        .menu-toggle {
-            display: none;
-            font-size: 1.8rem;
-            background: none;
-            border: none;
-            cursor: pointer;
+        section {
+            padding: 4rem 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            display: inline-block;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .profile-img {
+            width: 100%;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .publication-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .publication-item {
+            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            background-color: white;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s ease;
+        }
+
+        .publication-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.8rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            transition: all 0.3s ease;
+            gap: 0.5rem;
+        }
+
+        .button:hover {
+            background-color: #2c5282;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 1rem;
+            margin-top: 5rem;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        ul {
+            padding-left: 1.2rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background-color: var(--light-bg);
+            border-radius: 20px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .social-icon {
+            color: white;
+            margin: 0 1rem;
+            font-size: 1.4rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .social-icon:hover {
+            opacity: 0.8;
+        }
+
+        .contact-card {
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .highlight-box {
+            background-color: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+
+        .authors {
+            color: #666;
+            font-size: 0.95rem;
+            margin: 0.8rem 0;
+        }
+
+        .ai {
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        /* New styles for Education section */
+        .education-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .education-logo {
+            width: 80px;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .education-details {
+            flex: 1;
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .research-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            nav {
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .education-item {
                 flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: white;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-                padding: 1rem 0;
+                align-items: center;
+                text-align: center;
             }
 
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
+            .education-logo {
+                margin-bottom: 1rem;
             }
         }
     </style>
@@ -99,24 +258,14 @@
         <p>AI Researcher | Machine Learning Specialist</p>
     </header>
 
-    <nav class="navbar">
-        <button class="menu-toggle" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#education">Education</a>
-            <a href="#research">Research</a>
-            <a href="#publications">Publications</a>
-            <a href="#contact">Contact</a>
-        </div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
     <section id="about">
         <h2>About Me</h2>
         <div class="research-grid">
